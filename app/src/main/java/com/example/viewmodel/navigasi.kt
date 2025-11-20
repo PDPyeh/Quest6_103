@@ -48,11 +48,16 @@ fun DataApp(
                 TampilSiswa(
                     statusUiSiswa = uiState.value,
                     onBackButtonClicked = {
-                        navController.popBackStack()
+                        cancelAndBackToFormulirku(navController)
                     }
                 )
             }
 
         }
     }
+}
+
+private fun cancelAndBackToFormulirku(navController: NavHostController) {
+    navController.popBackStack(route = com.example.viewmodel.Navigasi.Formulirku.name,
+        inclusive = false)
 }
